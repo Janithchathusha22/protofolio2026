@@ -1,0 +1,17 @@
+{
+	"name": "Janith Chathusha — Software Engineer",
+	"short_name": "Janith C.",
+	"description": "Portfolio of Janith Chathusha — Full-Stack Software Engineer & Practical AI Systems Architect",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#000000",
+	"theme_color": "#000000",
+	"icons": [
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any maskable"
+		}
+	]
+}

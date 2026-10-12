@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/* ───────────── Design tokens ───────────── */
+@theme {
+	--color-ink: #000000;
+	--color-surface: #060606;
+	--color-surface-2: #0a0a0a;
+	--color-fg: #ffffff;
+	--color-fg-2: #8a95a5;
+	--color-fg-3: #4b5563;
+	--color-sig-blue: #1687ff;
+	--color-sig-cyan: #24d7ff;
+	--color-sig-gold: #eab66a;
+
+	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+	--ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ───────────── Base ───────────── */
+@layer base {
+	html {
+		background: #000;
+		color-scheme: dark;
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+	body {
+		@apply bg-ink font-sans text-fg;
+		font-feature-settings: 'ss01', 'cv11';
+	}
+	::selection {
+		background: rgb(234 182 106 / 0.28);
+		color: #fff;
+	}
+	:focus-visible {
+		outline: 1px solid var(--color-sig-gold);
+		outline-offset: 3px;
+		border-radius: 4px;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.001ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.001ms !important;
+		}
+	}
+}
+
+/* ───────────── Editorial utilities ───────────── */
+@utility container-editorial {
+	@apply mx-auto w-full max-w-6xl px-6 lg:px-12;
+}
+@utility section-rhythm {
+	@apply py-28 md:py-36;
+}
+@utility eyebrow {
+	@apply font-mono text-[11px] font-medium tracking-[0.28em] uppercase;
+}
+@utility hairline {
+	border-color: rgb(255 255 255 / 0.08);
+}
+
+/* Returning visitors (session guard set inline in app.html) skip the loader instantly. */
+:root[data-intro-seen] .signal-loader {
+	display: none;
+}
