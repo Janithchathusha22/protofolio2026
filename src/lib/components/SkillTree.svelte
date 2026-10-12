@@ -618,9 +618,8 @@
 		<!-- Section Header -->
 		<div class="flex flex-col items-start gap-4 md:flex-row md:items-end md:justify-between" use:reveal>
 			<div>
-				<p class="eyebrow flex items-center gap-3" style="color: {selectedBranch.color};">
+				<p class="eyebrow flex items-center gap-2.5" style="color: {selectedBranch.color};">
 					<span class="font-mono text-fg-3">03</span>
-					<span class="h-px w-6 bg-current opacity-50"></span>
 					<span>Living Architecture</span>
 				</p>
 				<h2 class="mt-4 text-4xl font-medium tracking-tight text-white md:text-6xl">

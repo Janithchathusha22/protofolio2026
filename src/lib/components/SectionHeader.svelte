@@ -13,10 +13,9 @@
 
 <header class="mb-20 grid gap-8 md:mb-28 md:grid-cols-12" use:reveal>
 	<div class="md:col-span-4">
-		<p class="eyebrow flex items-center gap-3 {accent}">
+		<p class="eyebrow flex items-center gap-2.5 {accent}">
 			<span class="font-mono text-fg-3">{index}</span>
-			<span class="h-px w-6 bg-current opacity-50"></span>
-			{eyebrow}
+			<span>{eyebrow}</span>
 		</p>
 	</div>
 	<div class="md:col-span-8">

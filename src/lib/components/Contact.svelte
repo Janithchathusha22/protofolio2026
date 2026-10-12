@@ -53,9 +53,8 @@
 
 	<div class="container-editorial relative">
 		<!-- Section Eyebrow -->
-		<p class="eyebrow flex items-center gap-3 text-sig-gold" use:reveal>
+		<p class="eyebrow flex items-center gap-2.5 text-sig-gold" use:reveal>
 			<span class="font-mono text-fg-3">06</span>
-			<span class="h-px w-6 bg-current opacity-50"></span>
 			<span>Initiate Transmission</span>
 		</p>
 
