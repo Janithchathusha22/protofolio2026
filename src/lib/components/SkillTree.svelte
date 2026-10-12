@@ -655,14 +655,14 @@
 				<div class="pointer-events-none absolute bottom-3 right-3 size-4 border-b-2 border-r-2 border-white/20" aria-hidden="true"></div>
 
 				<!-- ── Top Glass Telemetry & HUD Bar ── -->
-				<div class="relative z-20 flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] bg-black/60 px-6 py-3.5 font-mono text-[11px] backdrop-blur-xl">
+				<div class="relative z-20 flex flex-wrap items-center justify-between gap-2.5 border-b border-white/[0.08] bg-black/60 px-3.5 sm:px-6 py-3 font-mono text-[10px] sm:text-[11px] backdrop-blur-xl">
 					<!-- Left: Status & Cluster Telemetry -->
-					<div class="flex items-center gap-3">
+					<div class="flex items-center gap-2.5">
 						<span
-							class="size-2 rounded-full animate-pulse"
+							class="size-2 rounded-full animate-pulse shrink-0"
 							style="background-color: {selectedBranch.color}; box-shadow: 0 0 12px {selectedBranch.color};"
 						></span>
-						<span class="text-white font-medium tracking-wider">NEURAL_TREE // SYNAPTIC CONDUCTION</span>
+						<span class="text-white font-medium tracking-wider truncate max-w-[200px] sm:max-w-none">NEURAL_TREE // SYNAPTIC CONDUCTION</span>
 						<span class="hidden sm:inline text-fg-3">·</span>
 						<span class="hidden sm:inline text-[#94A3B8]">PATH-FOLLOWING ACTION POTENTIALS</span>
 					</div>

@@ -30,7 +30,7 @@
 
 <article
 	id="project-{project.id}"
-	class="group relative rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.03] to-white/[0.008] p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] backdrop-blur-2xl transition-all duration-700 ease-out hover:border-white/20 md:p-10 lg:p-12"
+	class="group relative rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.03] to-white/[0.008] p-5 sm:p-6 shadow-[0_8px_32px_0_rgba(0,0,0,0.6)] backdrop-blur-2xl transition-all duration-700 ease-out hover:border-white/20 md:p-10 lg:p-12"
 	style="--accent:{color}"
 	use:reveal={{ y: 32 }}
 >
@@ -44,7 +44,7 @@
 		style="background: var(--accent)"
 	></div>
 
-	<div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+	<div class="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-14">
 		<!-- 16:10 Visual Media Frame -->
 		<figure class="lg:col-span-7 {reverse ? 'lg:order-2' : ''}">
 			<div

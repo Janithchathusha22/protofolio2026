@@ -59,10 +59,10 @@
 
 /* ───────────── Editorial utilities ───────────── */
 @utility container-editorial {
-	@apply mx-auto w-full max-w-6xl px-6 lg:px-12;
+	@apply mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-12;
 }
 @utility section-rhythm {
-	@apply py-28 md:py-36;
+	@apply py-20 sm:py-28 md:py-36;
 }
 @utility eyebrow {
 	@apply font-mono text-[11px] font-medium tracking-[0.28em] uppercase;

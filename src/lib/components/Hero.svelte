@@ -58,7 +58,7 @@
 				</div>
 				<div>
 					<dt class="eyebrow text-fg-3">Now</dt>
-					<dd class="mt-2 text-sm text-white">Absol X</dd>
+					<dd class="mt-2 text-sm text-white">Absolx</dd>
 				</div>
 				<div>
 					<dt class="eyebrow text-fg-3">Focus</dt>

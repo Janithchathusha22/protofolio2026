@@ -415,10 +415,10 @@
 	<div class="pointer-events-none absolute bottom-3 right-3 size-4 border-b-2 border-r-2 border-white/20 z-20" aria-hidden="true"></div>
 
 	<!-- ── Top HUD Telemetry Bar ── -->
-	<div class="relative z-20 flex flex-wrap items-center justify-between gap-3 border-b border-white/[0.08] bg-black/65 px-6 py-3.5 font-mono text-[11px] backdrop-blur-xl">
-		<div class="flex items-center gap-2.5">
+	<div class="relative z-20 flex flex-wrap items-center justify-between gap-2.5 border-b border-white/[0.08] bg-black/65 px-4 sm:px-6 py-3 font-mono text-[10px] sm:text-[11px] backdrop-blur-xl">
+		<div class="flex items-center gap-2">
 			<span class="size-2 rounded-full bg-[#00F0FF] animate-pulse shadow-[0_0_10px_#00F0FF]"></span>
-			<span class="text-white font-medium tracking-wider">NEURAL_SYNTHESIS // HUMAN COGNITION &amp; PRACTICAL AI</span>
+			<span class="text-white font-medium tracking-wider truncate max-w-[260px] sm:max-w-none">NEURAL_SYNTHESIS // HUMAN COGNITION &amp; PRACTICAL AI</span>
 		</div>
 
 		<div class="flex items-center gap-6 text-fg-3">
