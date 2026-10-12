@@ -14,8 +14,8 @@
 
 	<div class="container-editorial relative grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
 		<div class="lg:col-span-7">
-			<p class="h-in eyebrow flex items-center gap-3 text-sig-gold" style="--d:0ms">
-				<span class="h-px w-8 bg-sig-gold/60"></span>{profile.role}
+			<p class="h-in eyebrow text-sig-gold" style="--d:0ms">
+				{profile.role}
 			</p>
 
 			<h1 class="h-in mt-8 text-5xl font-medium tracking-tight text-white md:text-7xl" style="--d:90ms">
