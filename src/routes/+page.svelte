@@ -75,18 +75,24 @@
 					'Software Engineering',
 					'Full-Stack Development',
 					'Artificial Intelligence',
+					'Explainable AI (XAI)',
 					'Machine Learning',
+					'FastAPI',
+					'SvelteKit',
+					'Computer Vision',
+					'Agentic AI',
 					'Sports Analytics',
-					'Explainable AI',
-					'Automation Pipelines',
 					'Python',
 					'React',
-					'SvelteKit',
-					'Node.js'
+					'Node.js',
+					'PyTorch',
+					'LangGraph',
+					'n8n'
 				],
 				sameAs: [
 					'https://github.com/JanithChathusha22',
-					'https://www.linkedin.com/in/janith-chathusha/'
+					'https://www.linkedin.com/in/janith-chathusha/',
+					'https://www.behance.net/janithchathusha'
 				]
 			},
 			{
