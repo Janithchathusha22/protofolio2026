@@ -21,7 +21,7 @@
 		forcePlay = false
 	}: Props = $props();
 
-	const SESSION_KEY = 'jc:cinematic-intro-v4';
+	const SESSION_KEY = 'jc:cinematic-intro-seen';
 
 	let mounted = $state(true);
 	let canvas = $state<HTMLCanvasElement>();
@@ -43,9 +43,11 @@
 		mounted = false;
 		ui.loaderDone = true;
 		document.documentElement.style.overflow = '';
+		document.documentElement.setAttribute('data-intro-seen', '');
 		if (reason === 'completed' || reason === 'skipped') {
 			try {
 				sessionStorage.setItem(SESSION_KEY, '1');
+				sessionStorage.setItem('jc:intro-seen', '1');
 			} catch {}
 		}
 	}
@@ -377,6 +379,7 @@
 {#if mounted}
 	<div
 		bind:this={overlay}
+		id="cinematic-intro-overlay"
 		class="fixed inset-0 z-[100] flex flex-col justify-between overflow-hidden bg-black transition-opacity duration-500"
 		style="opacity: {overlayOpacity}; pointer-events: {overlayOpacity <= 0.05 ? 'none' : 'auto'}"
 		role="dialog"

@@ -71,7 +71,14 @@
 	border-color: rgb(255 255 255 / 0.08);
 }
 
-/* Returning visitors (session guard set inline in app.html) skip the loader instantly. */
+/* Returning visitors or reduced motion skip the intro instantly and show hero content. */
+:root[data-intro-seen] #cinematic-intro-overlay,
 :root[data-intro-seen] .signal-loader {
-	display: none;
+	display: none !important;
 }
+
+:root[data-intro-seen] .h-in {
+	opacity: 1 !important;
+	transform: none !important;
+}
+

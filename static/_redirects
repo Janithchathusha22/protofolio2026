@@ -1,0 +1,10 @@
+# Permanent 301 Redirects to primary production domain
+# Avoid redirect loops by never redirecting https://janithchathusha.com to itself
+
+# Redirect legacy Netlify subdomain
+https://janithchathusha9.netlify.app/*  https://janithchathusha.com/:splat  301!
+http://janithchathusha9.netlify.app/*   https://janithchathusha.com/:splat  301!
+
+# Redirect www subdomain to apex primary domain
+https://www.janithchathusha.com/*       https://janithchathusha.com/:splat  301!
+http://www.janithchathusha.com/*        https://janithchathusha.com/:splat  301!

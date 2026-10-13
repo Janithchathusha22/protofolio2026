@@ -24,13 +24,19 @@
 			<!-- Image frame -->
 			<div class="lg:col-span-5" use:reveal={{ y: 24 }}>
 				<div class="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-[0_0_50px_rgba(0,0,0,0.6)]">
-					<img
-						src={profile.aboutPortrait}
-						alt="Janith Chathusha — SLIIT Convocation"
-						class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-						loading="lazy"
-						decoding="async"
-					/>
+					<picture class="h-full w-full">
+						<source srcset="/janith-about.webp" type="image/webp" />
+						<source srcset="/janith-about.jpg" type="image/jpeg" />
+						<img
+							src={profile.aboutPortrait}
+							alt="Janith Chathusha — SLIIT Convocation"
+							width="683"
+							height="1024"
+							class="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+							loading="lazy"
+							decoding="async"
+						/>
+					</picture>
 					<!-- Vignette -->
 					<div
 						class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"

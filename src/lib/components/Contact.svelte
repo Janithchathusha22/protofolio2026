@@ -216,7 +216,7 @@
 									class="flex items-center justify-between text-fg-2 transition-colors hover:text-white group"
 								>
 									<span>{p.title}</span>
-									<span class="text-fg-3 text-[10px] group-hover:text-sig-gold">0{p.index}</span>
+									<span class="text-fg-3 text-[10px] group-hover:text-sig-gold">{p.index}</span>
 								</a>
 							</li>
 						{/each}

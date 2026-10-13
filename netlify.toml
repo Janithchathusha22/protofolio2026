@@ -1,0 +1,32 @@
+# Netlify Configuration for Janith Chathusha Portfolio
+
+[[redirects]]
+  from = "https://janithchathusha9.netlify.app/*"
+  to = "https://janithchathusha.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://janithchathusha9.netlify.app/*"
+  to = "https://janithchathusha.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.janithchathusha.com/*"
+  to = "https://janithchathusha.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.janithchathusha.com/*"
+  to = "https://janithchathusha.com/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

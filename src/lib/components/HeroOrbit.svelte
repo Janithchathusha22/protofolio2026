@@ -31,15 +31,21 @@
 	<!-- Portrait: Clean High-End Studio Cutout on pitch black (#000000) -->
 	<div class="relative z-10 flex h-full w-full items-end justify-center pointer-events-none">
 		{#if !failed}
-			<img
-				bind:this={img}
-				{src}
-				{alt}
-				onerror={() => (failed = true)}
-				class="h-full w-full object-contain object-bottom select-none [mask-image:linear-gradient(to_bottom,#000_84%,transparent_100%)] drop-shadow-[0_20px_60px_rgba(0,0,0,0.95)]"
-				fetchpriority="high"
-				decoding="async"
-			/>
+			<picture class="h-full w-full flex items-end justify-center">
+				<source srcset="/portrait.webp" type="image/webp" />
+				<source srcset="/portrait.jpg" type="image/jpeg" />
+				<img
+					bind:this={img}
+					src={src}
+					{alt}
+					width="500"
+					height="580"
+					onerror={() => (failed = true)}
+					class="h-full w-full object-contain object-bottom select-none [mask-image:linear-gradient(to_bottom,#000_84%,transparent_100%)] drop-shadow-[0_20px_60px_rgba(0,0,0,0.95)]"
+					fetchpriority="high"
+					decoding="async"
+				/>
+			</picture>
 		{:else}
 			<!-- Silhouette fallback -->
 			<svg viewBox="0 0 360 500" class="h-full w-full" role="img" aria-label={alt}>

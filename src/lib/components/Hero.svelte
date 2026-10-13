@@ -85,8 +85,19 @@
 		transform: scale(0.94);
 		transition-duration: 1.4s;
 	}
-	.ready .h-in {
+	.ready .h-in,
+	:global(:root[data-intro-seen]) .h-in {
 		opacity: 1;
 		transform: none;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.h-in {
+			opacity: 1 !important;
+			transform: none !important;
+			transition: none !important;
+		}
+		.h-portrait {
+			transform: none !important;
+		}
 	}
 </style>

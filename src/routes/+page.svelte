@@ -9,33 +9,32 @@
 	import About from '$lib/components/About.svelte';
 	import Contact from '$lib/components/Contact.svelte';
 	import { ui } from '$lib/state/ui.svelte.js';
+	import { SITE_URL } from '$lib/data/portfolio';
 
-	const title = 'Janith Chathusha — Software Engineer · Full-Stack & Practical AI';
+	const siteUrl = SITE_URL;
+	const title = 'Janith Chathusha | Software Engineer, AI & Data Analytics';
 	const description =
-		'Janith Chathusha builds full-stack products and practical AI systems — scalable backends, explainable ML, and intelligent automation.';
+		'Explore Janith Chathusha’s portfolio of software engineering, AI, machine learning, sports analytics, and automation projects in Sri Lanka.';
+	const socialImage = `${siteUrl}/janith-hero.jpg`;
 </script>
 
 <svelte:head>
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta
-		name="keywords"
-		content="Janith Chathusha, Software Engineer, Full-Stack Developer, AI Engineer, Machine Learning, LangGraph, CrewAI, Python, React, Svelte, Node.js, Sri Lanka, SLIIT, Absolx, NewsShield, Explainable AI"
-	/>
 	<meta name="author" content="Janith Chathusha" />
 	<meta name="publisher" content="Janith Chathusha" />
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 	<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-	<link rel="canonical" href="https://janithchathusha9.netlify.app/" />
+	<link rel="canonical" href="{siteUrl}/" />
 
 	<!-- Open Graph / Social Sharing (WhatsApp, LinkedIn, Facebook, Slack) -->
-	<meta property="og:site_name" content="Janith Chathusha Portfolio" />
+	<meta property="og:site_name" content="Janith Chathusha" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:url" content="https://janithchathusha9.netlify.app/" />
+	<meta property="og:url" content="{siteUrl}/" />
 	<meta property="og:type" content="profile" />
-	<meta property="og:image" content="https://janithchathusha9.netlify.app/janith-hero.jpg" />
-	<meta property="og:image:secure_url" content="https://janithchathusha9.netlify.app/janith-hero.jpg" />
+	<meta property="og:image" content={socialImage} />
+	<meta property="og:image:secure_url" content={socialImage} />
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="1600" />
@@ -49,7 +48,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="https://janithchathusha9.netlify.app/janith-hero.jpg" />
+	<meta name="twitter:image" content={socialImage} />
 	<meta name="twitter:image:alt" content="Janith Chathusha — Software Engineer" />
 
 	<!-- Schema.org Rich Structured Data Graph -->
@@ -58,11 +57,11 @@
 		'@graph': [
 			{
 				'@type': 'Person',
-				'@id': 'https://janithchathusha9.netlify.app/#person',
+				'@id': `${siteUrl}/#person`,
 				name: 'Janith Chathusha',
 				alternateName: 'ජනිත් චතුෂ',
-				url: 'https://janithchathusha9.netlify.app/',
-				image: 'https://janithchathusha9.netlify.app/janith-hero.jpg',
+				url: `${siteUrl}/`,
+				image: socialImage,
 				jobTitle: 'Software Engineer',
 				worksFor: {
 					'@type': 'Organization',
@@ -73,48 +72,48 @@
 					name: 'Sri Lanka Institute of Information Technology (SLIIT)'
 				},
 				knowsAbout: [
-					'Full-Stack Engineering',
+					'Software Engineering',
+					'Full-Stack Development',
 					'Artificial Intelligence',
-					'Agentic Workflows',
-					'LangGraph',
-					'CrewAI',
 					'Machine Learning',
+					'Sports Analytics',
+					'Explainable AI',
+					'Automation Pipelines',
 					'Python',
 					'React',
-					'Node.js',
-					'Svelte',
-					'System Architecture'
+					'SvelteKit',
+					'Node.js'
 				],
 				sameAs: [
-					'https://www.linkedin.com/in/janith-chathusha/',
-					'https://github.com/Janithchathusha22',
-					'https://www.behance.net/janithchathusha'
+					'https://github.com/JanithChathusha22',
+					'https://www.linkedin.com/in/janith-chathusha/'
 				]
 			},
 			{
 				'@type': 'WebSite',
-				'@id': 'https://janithchathusha9.netlify.app/#website',
-				url: 'https://janithchathusha9.netlify.app/',
-				name: 'Janith Chathusha Portfolio',
+				'@id': `${siteUrl}/#website`,
+				url: `${siteUrl}/`,
+				name: title,
 				description: description,
 				author: {
-					'@id': 'https://janithchathusha9.netlify.app/#person'
+					'@id': `${siteUrl}/#person`
 				},
 				inLanguage: 'en-US'
 			},
 			{
-				'@type': 'ProfilePage',
-				'@id': 'https://janithchathusha9.netlify.app/#webpage',
-				url: 'https://janithchathusha9.netlify.app/',
+				'@type': 'WebPage',
+				'@id': `${siteUrl}/#webpage`,
+				url: `${siteUrl}/`,
 				name: title,
+				description: description,
 				isPartOf: {
-					'@id': 'https://janithchathusha9.netlify.app/#website'
+					'@id': `${siteUrl}/#website`
 				},
 				about: {
-					'@id': 'https://janithchathusha9.netlify.app/#person'
+					'@id': `${siteUrl}/#person`
 				},
 				mainEntity: {
-					'@id': 'https://janithchathusha9.netlify.app/#person'
+					'@id': `${siteUrl}/#person`
 				}
 			}
 		]

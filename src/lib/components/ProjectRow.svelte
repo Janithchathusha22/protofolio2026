@@ -9,6 +9,9 @@
 	import FoodCheckerVisual from './visuals/FoodCheckerVisual.svelte';
 	import AiAssistantVisual from './visuals/AiAssistantVisual.svelte';
 
+	import EditorialPlatformVisual from './visuals/EditorialPlatformVisual.svelte';
+	import SriLankaT20Visual from './visuals/SriLankaT20Visual.svelte';
+
 	interface Props {
 		project: Project;
 		reverse?: boolean;
@@ -17,7 +20,9 @@
 
 	const visuals = {
 		newsshield: NewsShieldVisual,
+		newssite: EditorialPlatformVisual,
 		lpl: LplVisual,
+		'srilanka-t20': SriLankaT20Visual,
 		biomechanics: BiomechanicsVisual,
 		matchmind: MatchMindVisual,
 		foodchecker: FoodCheckerVisual,

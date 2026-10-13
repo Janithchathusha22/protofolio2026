@@ -1,6 +1,8 @@
 // Single source of truth for Janith Chathusha's portfolio
 // Pure pitch black (#000000) · Glassmorphic cards · Engineering & Practical AI
 
+export const SITE_URL = 'https://janithchathusha.com';
+
 export type Accent = 'blue' | 'cyan' | 'gold';
 
 export const profile = {
@@ -11,11 +13,12 @@ export const profile = {
 		'Focused on engineering craft — scalable backend architecture, explainable machine learning pipelines, and intelligent automation that earns its place in production.',
 	email: 'chathushadayawansha1346@gmail.com',
 	resumeUrl: '/Janith_Chathusha_CV.pdf',
-	portrait: '/portrait.jpg',
-	gradPortrait: '/janith-grad-portrait.jpg',
-	aboutPortrait: '/janith-about.jpg',
+	portrait: '/portrait.webp',
+	heroJpg: '/janith-hero.jpg',
+	gradPortrait: '/janith-grad-portrait.webp',
+	aboutPortrait: '/janith-about.webp',
 	linkedin: 'https://www.linkedin.com/in/janith-chathusha/',
-	github: 'https://github.com/Janithchathusha22',
+	github: 'https://github.com/JanithChathusha22',
 	behance: 'https://www.behance.net/janithchathusha'
 };
 
@@ -37,8 +40,8 @@ export const socials = [
 	},
 	{
 		label: 'GitHub',
-		href: 'https://github.com/Janithchathusha22',
-		handle: '@Janithchathusha22',
+		href: 'https://github.com/JanithChathusha22',
+		handle: '@JanithChathusha22',
 		verified: true
 	},
 	{
@@ -55,7 +58,15 @@ export const socials = [
 	}
 ] as const;
 
-export type ProjectVisual = 'newsshield' | 'lpl' | 'biomechanics' | 'matchmind' | 'foodchecker' | 'aiassistant';
+export type ProjectVisual =
+	| 'newsshield'
+	| 'newssite'
+	| 'lpl'
+	| 'srilanka-t20'
+	| 'biomechanics'
+	| 'matchmind'
+	| 'aiassistant'
+	| 'foodchecker';
 
 export interface Project {
 	id: string;
@@ -64,12 +75,13 @@ export interface Project {
 	subtitle: string;
 	category: string;
 	context: string;
-	keyFeatures: string[];
+	keyFeatures: [string, string];
 	stack: string[];
 	deliverable: string;
 	visual: ProjectVisual;
 	accent: Accent;
 	caption: string;
+	githubUrl?: string;
 	linkedinUrl?: string;
 	statusBadge?: string;
 }
@@ -82,55 +94,92 @@ export const projects: Project[] = [
 		subtitle: 'Explainable Fake News Detection',
 		category: 'NLP · Full-Stack AI',
 		context:
-			'Built a web application that evaluates news content using a BiLSTM model, rule-based checks, and explainable AI. Instead of showing only a classification verdict, NewsShield highlights the exact words that influenced the result, helping users inspect and understand the model’s reasoning.',
+			'Built a web application evaluating news content using a BiLSTM model, rule-based heuristics, and explainable AI. Rather than an opaque classification verdict, NewsShield highlights the exact words that influenced the prediction so users can inspect model reasoning.',
 		keyFeatures: [
-			'News classification with continuous prediction confidence scoring',
-			'Word-level explainability using LIME (Local Interpretable Model-agnostic Explanations)',
-			'Rule-based heuristics for identifying misleading framing and suspicious sourcing'
+			'Token attribution heatmap via LIME (Local Interpretable Model-agnostic Explanations)',
+			'Continuous prediction confidence scoring paired with heuristic source checks'
 		],
-		stack: ['React', 'Framer Motion', 'FastAPI', 'TensorFlow', 'Keras', 'LIME'],
+		stack: ['React', 'FastAPI', 'TensorFlow', 'Keras', 'LIME', 'BiLSTM'],
 		deliverable: 'Explainable inference layer showing salient token attribution heatmap and classification confidence.',
 		visual: 'newsshield',
 		accent: 'gold',
 		caption: 'Token attribution heatmap · LIME explainability',
-		linkedinUrl: 'https://www.linkedin.com/posts/janith-chathusha_newsshield-an-ai-powered-fake-news-detection-activity-7456758714243620864-8lFI'
+		githubUrl: 'https://github.com/Janithchathusha22/NEWSSHIELD',
+		linkedinUrl:
+			'https://www.linkedin.com/posts/janith-chathusha_newsshield-an-ai-powered-fake-news-detection-activity-7456758714243620864-8lFI'
+	},
+	{
+		id: 'newssite',
+		index: '02',
+		title: 'News Aggregation & Editorial Platform',
+		subtitle: 'Automated Ingestion & Review-First Publishing',
+		category: 'Full-Stack · AI Editorial Pipeline',
+		context:
+			'Engineered an end-to-end editorial platform combining automated multi-source news collection, AI-assisted draft generation, and a human-in-the-loop review workflow. Source text is stored as an immutable record, while editors review and approve drafts before publication.',
+		keyFeatures: [
+			'Automated collectors store immutable source articles and queue guarded Groq drafts',
+			'Editorial review dashboard ensuring human verification and sign-off prior to publication'
+		],
+		stack: ['React', 'Express.js', 'Python', 'Supabase', 'PostgreSQL', 'Groq LLM'],
+		deliverable: 'Review-first news platform with automated ingestion, editor approval desk, and public reader frontend.',
+		visual: 'newssite',
+		accent: 'blue',
+		caption: 'Editorial review pipeline · Automated collection with human sign-off',
+		githubUrl: 'https://github.com/JanithChathusha22/newssite'
 	},
 	{
 		id: 'lpl',
-		index: '02',
+		index: '03',
 		title: 'LPL 2026 Intelligence',
 		subtitle: 'Explainable Cricket Analytics Platform',
 		category: 'Machine Learning · Sports Analytics',
 		context:
-			'Developed an interactive cricket analytics platform that combines live match predictions, player performance tracking, and tournament simulations. Connects machine learning models with an explainability layer so analysts and coaches can explore both the predictions and the factors behind them.',
+			'Developed an interactive cricket analytics platform combining live match outcome forecasting, player matchup metrics, and tournament simulations. Connects machine learning models with an explainability layer so coaches and analysts can explore both predictions and their underlying factors.',
 		keyFeatures: [
-			'Real-time match win-probability forecasting and projected innings scores',
-			'Player performance indexing across match phases and head-to-head dynamics',
-			'Tournament forecasting powered by 5,000 Monte Carlo match simulations',
-			'Feature contributions visualized using Gradient × Input explainability'
+			'Real-time win-probability telemetry & projected scores with Gradient × Input explainability',
+			'5,000 Monte Carlo match simulations with phase-wise player performance indexing'
 		],
-		stack: ['Python', 'PyTorch', 'scikit-learn', 'Pandas', 'NumPy', 'FastAPI', 'Streamlit', 'Matplotlib'],
+		stack: ['Python', 'PyTorch', 'scikit-learn', 'FastAPI', 'Streamlit', 'Pandas'],
 		deliverable: 'Real-time telemetry pipeline with match-state win probability and feature contribution decomposition.',
 		visual: 'lpl',
 		accent: 'blue',
 		caption: 'Win-probability telemetry · Gradient × Input attribution',
-		linkedinUrl: 'https://www.linkedin.com/pulse/lpl-2026-prediction-system-building-explainable-ai-xai-chathusha-0bzxc'
+		githubUrl: 'https://github.com/Janithchathusha22/Lpl2026',
+		linkedinUrl:
+			'https://www.linkedin.com/pulse/lpl-2026-prediction-system-building-explainable-ai-xai-chathusha-0bzxc'
+	},
+	{
+		id: 'srilanka-t20',
+		index: '04',
+		title: 'Sri Lanka T20 Performance Analytics',
+		subtitle: '2006–2025 Historical Telemetry Dashboard',
+		category: 'Data Analytics · Business Intelligence',
+		context:
+			'An interactive six-tab Power BI dashboard exploring Sri Lanka’s T20 international performance from 2006 to 2025. Analyzes team match results, phase-wise batting dynamics, over-by-over momentum trends, player head-to-head comparisons, and venue conditions.',
+		keyFeatures: [
+			'Star-schema data model transforming ball-by-ball records into Matches, Batters, Venues, and Wickets',
+			'Deep KPI telemetry tracking Win %, Batting Average, Strike Rate, Boundary %, and Dot-Ball %'
+		],
+		stack: ['Python', 'Pandas', 'Power BI', 'Power Query', 'DAX'],
+		deliverable: 'Interactive six-tab Power BI dashboard with DAX calculations and star-schema relationships.',
+		visual: 'srilanka-t20',
+		accent: 'cyan',
+		caption: '6-tab Power BI dashboard · Ball-by-ball star schema 2006–2025',
+		githubUrl: 'https://github.com/Janithchathusha22/Sri-Lanka-T20-Cricket-Performance-Analytics'
 	},
 	{
 		id: 'biomechanics',
-		index: '03',
+		index: '05',
 		title: 'Cricket Biomechanics',
-		subtitle: 'Bowling Action Analyzer',
+		subtitle: 'Bowling Action Kinematics Analyzer',
 		category: 'Computer Vision · Video Analytics',
 		context:
-			'Created a computer vision prototype that analyzes cricket bowling video footage using markerless pose estimation. It tracks body landmarks and joint kinematics, identifies ball release frames, and produces annotated video alongside graphical reports for technique exploration.',
+			'Created a computer vision research prototype that analyzes cricket bowling video footage using markerless pose estimation. Tracks anatomical landmarks and joint kinematics, identifies ball release frames, and produces annotated video alongside graphical reports.',
 		keyFeatures: [
-			'Markerless pose tracking and real-time joint-angle visualization',
-			'Automated bowling action phase detection and ball release-frame capture',
-			'Kinematic trajectory and release angle metrics for biomechanical review',
-			'Annotated video overlays and frame-by-frame joint angle progression charts'
+			'Markerless pose estimation with 33-landmark tracking and real-time joint-angle overlays',
+			'Automated bowling action phase detection, release-frame identification, and kinematic charts'
 		],
-		stack: ['Python', 'OpenCV', 'MediaPipe Pose', 'NumPy', 'Pandas', 'Matplotlib'],
+		stack: ['Python', 'OpenCV', 'MediaPipe Pose', 'NumPy', 'Matplotlib'],
 		deliverable: 'Pose estimation pipeline with 33-landmark tracking and joint-angle kinematic charts.',
 		visual: 'biomechanics',
 		accent: 'cyan',
@@ -139,59 +188,36 @@ export const projects: Project[] = [
 	},
 	{
 		id: 'matchmind',
-		index: '04',
+		index: '06',
 		title: 'MatchMind',
 		subtitle: 'Football Prediction & Tournament Explorer',
 		category: 'Predictive Modeling · Web Application',
 		context:
-			'Built a football match prediction platform that transforms team statistics, Elo ratings, recent form, and historical head-to-head performance into interactive match forecasts and tournament progression projections.',
+			'Built a football match prediction platform that transforms 49,000+ historical international match records, Elo ratings, recent form, and head-to-head dynamics into probabilistic match forecasts and tournament progression projections.',
 		keyFeatures: [
-			'Head-to-head team comparisons with win, draw, and loss outcome distributions',
-			'Poisson-based expected goals (xG) projections and most likely scorelines',
-			'Interactive knockout bracket simulator and team progression insights',
-			'Methodology transparency layer explaining feature weights and ratings'
+			'Head-to-head team comparisons with win/draw/loss outcome distributions and Poisson xG',
+			'Interactive tournament knockout bracket simulator with transparent rating weights'
 		],
-		stack: ['Python', 'Pandas', 'scikit-learn', 'joblib', 'HTML5', 'CSS3', 'JavaScript'],
+		stack: ['Python', 'scikit-learn', 'Pandas', 'FastAPI', 'React', 'HTML5/CSS3'],
 		deliverable: 'Predictive simulation engine with outcome probability distributions and tournament bracket graphs.',
 		visual: 'matchmind',
 		accent: 'cyan',
 		caption: 'Match forecast engine · Tournament bracket progression',
-		linkedinUrl: 'https://www.linkedin.com/posts/janith-chathusha_fifaworldcup2026-fifaprediction-2026fifaprediction-activity-7481436182271184896-KYxL'
-	},
-	{
-		id: 'foodchecker',
-		index: '05',
-		title: 'Food Quality Checker',
-		subtitle: 'Sensor-Based Freshness Monitoring',
-		category: 'IoT · Embedded Systems · Research',
-		context:
-			'Contributed to an academic food-quality monitoring prototype that uses gas sensors and environmental telemetry to detect chemical markers associated with fruit freshness and spoilage over time.',
-		keyFeatures: [
-			'Multi-channel gas telemetry measuring volatile organic compounds (MQ-3, MQ-4)',
-			'Environmental monitoring capturing ambient temperature and relative humidity (DHT11)',
-			'Microcontroller firmware with button-controlled mode selection and 16x2 LCD readout',
-			'Experimental time-series data logging for freshness degradation analysis'
-		],
-		stack: ['Embedded C/C++', 'MQ-3', 'MQ-4', 'DHT11', 'Microcontroller', 'Hardware Interfacing'],
-		deliverable: 'Embedded sensor firmware and physical telemetry unit logging spoilage gas concentrations.',
-		visual: 'foodchecker',
-		accent: 'gold',
-		caption: 'Hardware sensor telemetry · VOC concentration curves',
-		statusBadge: 'Academic Research Prototype'
+		githubUrl: 'https://github.com/Janithchathusha22/Matchmin',
+		linkedinUrl:
+			'https://www.linkedin.com/posts/janith-chathusha_fifaworldcup2026-fifaprediction-2026fifaprediction-activity-7481436182271184896-KYxL'
 	},
 	{
 		id: 'aiassistant',
-		index: '06',
+		index: '07',
 		title: 'AI Customer Assistant',
 		subtitle: 'Enterprise Workflow Automation',
 		category: 'AI Automation · Database Integration',
 		context:
-			'Contributed to production-tested AI customer-assistant workflows connecting natural-language conversational interfaces with relational business data, vector search, and automated back-office execution tools.',
+			'Contributed to production AI customer-assistant workflows connecting natural-language conversational interfaces with relational business data, vector search, and automated back-office execution tools.',
 		keyFeatures: [
-			'Autonomous chat workflows wired to PostgreSQL databases via Supabase',
-			'Dynamic prompt templates, conversation memory buffers, and context retrieval',
-			'Rigorous evaluation benchmarks on product catalog, pricing, and availability queries',
-			'Webhook event listeners and automated exception-handling queues'
+			'Autonomous chat workflows wired to PostgreSQL databases via Supabase and n8n',
+			'Dynamic prompt templates, conversation memory buffers, webhooks, and exception queues'
 		],
 		stack: ['n8n', 'Supabase', 'PostgreSQL', 'LLM APIs', 'Webhooks', 'REST APIs'],
 		deliverable: 'Multi-node asynchronous agent workflow with conversational memory and database querying.',
@@ -199,6 +225,26 @@ export const projects: Project[] = [
 		accent: 'blue',
 		caption: 'n8n workflow orchestration · Database integration pipeline',
 		statusBadge: 'External Work'
+	},
+	{
+		id: 'foodchecker',
+		index: '08',
+		title: 'Food Quality Checker',
+		subtitle: 'Sensor-Based Freshness Monitoring',
+		category: 'IoT · Embedded Systems · Research',
+		context:
+			'Contributed to an academic food-quality monitoring prototype that uses gas sensors and environmental telemetry to detect volatile organic compounds and monitor fruit freshness degradation curves over time.',
+		keyFeatures: [
+			'Multi-channel gas telemetry measuring VOCs via MQ-3 (alcohol) and MQ-4 (methane)',
+			'Microcontroller firmware with button mode selection, 16x2 LCD readout, and DHT11 telemetry'
+		],
+		stack: ['Embedded C/C++', 'MQ-3', 'MQ-4', 'DHT11', 'Microcontroller', 'Hardware Interfacing'],
+		deliverable: 'Embedded sensor firmware and physical telemetry unit logging spoilage gas concentrations.',
+		visual: 'foodchecker',
+		accent: 'gold',
+		caption: 'Hardware sensor telemetry · VOC concentration curves',
+		statusBadge: 'Academic Research Prototype',
+		githubUrl: 'https://github.com/Janithchathusha22/research_code'
 	}
 ];
 
